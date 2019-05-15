@@ -1,0 +1,92 @@
+<div class="jumbotron">
+  <h3 >Excited to have here</h3>
+  <br>
+  <div [hidden]="submitted" style="width: 300px;">
+    <form  [formGroup]="regForm" (ngSubmit)="onSubmit()">
+      
+      <div class="form-group" >
+        <label for="name">Firstname</label>
+        <input type="text" class="form-control" id="name"  formControlName="name"  [(ngModel)]="customer.name" name="name" required>
+      </div>
+  
+  
+        <div *ngIf="regForm.controls['name'].invalid && (regForm.controls['name'].dirty || regForm.controls['name'].touched)" class="alert alert-danger">
+          <div *ngIf="regForm.controls['name'].errors.required">
+             Name is required...
+          </div>
+        
+          <div *ngIf="regForm.controls['name'].errors.maxlength">
+              Maximum characters required for name is 20
+          </div>
+  
+          <div *ngIf="regForm.controls['name'].errors.minlength">
+          Minimum characters required for name is 3
+          </div>
+        </div>
+      
+  
+      <div class="form-group">
+        <label for="age">Email</label>
+        <input type="text" class="form-control" id="email"formControlName="email" [(ngModel)]="customer.email" name="email">
+      </div>
+  
+  
+      <div *ngIf="regForm.controls['email'].invalid && (regForm.controls['email'].dirty || regForm.controls['email'].touched)" class="alert alert-danger">
+        <div *ngIf="regForm.controls['email'].errors.required">
+          Email is required.
+        </div>
+        <div *ngIf="regForm.controls['email'].errors.pattern">
+          <!-- [(a-z),(A-Z),(0-9)@gmail.com] -->
+          Email should be like in this [anything@gmail.com]
+        </div>
+      </div>
+  
+  
+    <div class="form-group">
+        <label for="name">username</label>
+        <input type="text" class="form-control" id="uname" formControlName="uname" [(ngModel)]="customer.uname" name="uname">
+      </div>
+  
+      <div *ngIf="regForm.controls['uname'].invalid && (regForm.controls['uname'].dirty || regForm.controls['uname'].touched)" class="alert alert-danger">
+        <div *ngIf="regForm.controls['uname'].errors.required">
+           Username is required...
+        </div>
+      
+        <div *ngIf="regForm.controls['uname'].errors.maxlength">
+            Maximum characters required for name is 20
+        </div>
+  
+        <div *ngIf="regForm.controls['uname'].errors.minlength">
+        Minimum characters required for name is 3
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="pass">password</label>
+        <input type="text" class="form-control" id="pass" formControlName="pass" [(ngModel)]="customer.pass" name="password">
+      </div>
+  
+      <div *ngIf="regForm.controls['pass'].invalid && (regForm.controls['pass'].dirty || regForm.controls['pass'].touched)" class="alert alert-danger">
+        <div *ngIf="regForm.controls['pass'].errors.required">
+        Password  is required.
+        </div>
+        <div *ngIf="regForm.controls['pass'].errors.maxlength">
+          Maximum characters for password is 10
+        </div>
+        <div *ngIf="regForm.controls['pass'].errors.minlength">
+          Minimum characters for password is 6
+        </div>
+        <div *ngIf="regForm.controls['pass'].errors.pattern">
+          Password should comprised of atleast one lowercase, uppercase and number
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+  
+  <div *ngIf= "true" [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newCustomer()">Login</button>
+  </div>
+  </div>

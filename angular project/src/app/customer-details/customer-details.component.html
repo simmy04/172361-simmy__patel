@@ -1,0 +1,46 @@
+<div *ngIf="customer" >
+    
+    <div>
+       
+        <table >
+          <thead>
+            <tr>
+              <th>FoodItem</th>
+              <th>Title</th>
+              <th>Description</th> 
+              <th>Rating</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="https://drop.ndtv.com/albums/COOKS/pasta-vegetarian/pastaveg_640x480.jpg" width="50%">
+              </td>
+              <td>
+                {{customer.title}} 
+              </td>
+              <td>
+                {{customer.desc}}
+              </td>
+              <td>
+              <form [formGroup]="cPOst" (ngSubmit)="accept()">
+                <tr>
+                  <td>
+                   
+                    <input type="number" title="rating"  id="rating" formControlName="rating" name="rating" [(ngModel)]="rating.rating" required>
+                  </td>
+                  <td>
+                    <input   class="btn btn-success active" type="submit" value="Accept">
+                  </td>
+                </tr>
+              </form>
+            </td>
+            </tr>
+      
+    <!-- <div class="btn btn-success active" role="button" (click)='accept()'>Accept</div>   -->
+    </tbody>
+  </table>
+    <!-- <span class="btn btn-danger active" role="button" (click)='decline()'>Decline</span> -->
+    </div>
+  </div>

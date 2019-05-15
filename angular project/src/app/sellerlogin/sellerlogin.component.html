@@ -1,0 +1,64 @@
+<div class="jumbotron">
+<h2 align="center">Welcome to our esteemed sellers</h2>
+<div class="log-form">
+    <br>
+<div class="log-form">
+    <div align="center">
+    <h2>Login to your account</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+        <div class="form-group">
+        <label for="name">username</label>
+        <br>
+      <input type="text" title="username"  id="username"  formControlName="uname" name="uname" [(ngModel)]="customers.uname" required>
+        </div>
+
+        <div *ngIf="loginForm.controls['uname'].invalid && (loginForm.controls['uname'].dirty || loginForm.controls['uname'].touched)" class="alert alert-danger">
+            <div *ngIf="loginForm.controls['uname'].errors.required">
+               Username is required...
+            </div>
+          
+            <div *ngIf="loginForm.controls['uname'].errors.maxlength">
+                Maximum characters required for name is 20
+            </div>
+      
+            <div *ngIf="loginForm.controls['uname'].errors.minlength">
+            Minimum characters required for name is 3
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label for="pass">Password</label>
+              <br>
+              <input type="text" title="password"  id="password"  formControlName="pass" name="pass" [(ngModel)]="customers.pass" required>
+              
+              <!-- <input type="text" class="form-control" id="pass" formControlName="pass" [(ngModel)]="customers.pass" name="pass"> -->
+            </div>
+        
+            <div *ngIf="loginForm.controls['pass'].invalid && (loginForm.controls['pass'].dirty || loginForm.controls['pass'].touched)" class="alert alert-danger">
+              <div *ngIf="loginForm.controls['pass'].errors.required">
+              Password  is required.
+              </div>
+              <div *ngIf="loginForm.controls['pass'].errors.maxlength">
+                Maximum characters for password is 10
+              </div>
+              <div *ngIf="loginForm.controls['pass'].errors.minlength">
+                Minimum characters for password is 6
+              </div>
+              <div *ngIf="loginForm.controls['pass'].errors.pattern">
+                Password should comprised of atleast one lowercase, uppercase and number
+              </div>
+            </div>
+            
+        
+     
+      <button class="btn btn-success btn-lg" (click)="Login()">Login</button>&nbsp;
+      <button class="btn btn-success btn-lg" (click)="signup()">SignUp</button>  
+   
+    </form>
+  </div><!--end log form -->
+
+</div>
+</div>
+</div>
+
+

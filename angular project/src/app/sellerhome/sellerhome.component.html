@@ -1,0 +1,60 @@
+<div>
+    <div align="right">
+    
+        <div  align="right" class="button button5" value="AddFood" (click)='accept()'>Add Item</div>
+        <div  align="right" class="button button5" value="Logout" (click)='logout()'>Logout </div>
+      </div>
+  <table >
+    <thead>
+      <tr>
+      
+        <th>Title</th>
+        <th>Description</th> 
+        <th>Rating</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let customer of customers">
+        <td>
+          {{customer.bname}}
+        </td>
+        <td>
+          {{customer.title}} 
+        </td>
+        <td>
+          {{customer.rating}}
+        </td>
+       
+      </tr>
+
+<!-- <div class="btn btn-success active" role="button" (click)='accept()'>Accept</div>   -->
+</tbody>
+</table>
+<!-- <span class="btn btn-danger active" role="button" (click)='decline()'>Decline</span> -->
+</div>
+<!-- <div class="jumbotron">
+<div>
+  <div align="right">
+    
+    <div  align="right" class="button button5" value="AddFood" (click)='accept()'>Add Item</div>
+   
+  </div>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Buyer Name</th>
+          <th>Rating</th>
+          <th>title</th>  
+        </tr>
+      </thead>
+      <tr *ngFor="let customer of customers">
+        <td>{{customer.bname}}</td> 
+        <td>{{customer.rating}}</td>  
+        <td>{{customer.title}}</td>
+      </tr>  
+    </table>   
+  </div>
+</div>
+</div> -->

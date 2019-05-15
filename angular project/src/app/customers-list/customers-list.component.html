@@ -1,0 +1,20 @@
+<div class="jumbotron">
+    <div  align="right" class="button button5" value="Logout" (click)='logout()'>Logout</div>
+<div class="bg">
+
+<h1 align="center">Welcome to FoodZone</h1>
+
+<!-- <div align="right">
+<a routerLink="customer" align="right" class="btn btn-primary active" role="button" routerLinkActive="active">Home</a>
+<button class="btn btn-primary" (click)="seller()">Seller</button> 
+<button class="btn btn-primary" (click)="logout()">Logout</button>  
+</div> -->
+ <div *ngFor="let customer of customers" style="width: 300px;">
+  <customer-details [customer]='customer'></customer-details>
+
+</div>
+</div>
+</div>
+
+
+
