@@ -1,0 +1,16 @@
+<div style="text-align:center">
+  <h1 >
+    Welcome to {{ title }}!
+  </h1>  
+  <img width="300" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSakfx7D7VNWDKS_b_i9VT0ow875cJOT_zo2g4ww_GaGRTFTXGDLw">
+</div>
+  <ul class="list-group">
+    <li class="list-group-item "><a [routerLink]="['/create']">
+      Add Movie
+    </a></li>
+    <li class="list-group-item"><a [routerLink]="['/index']" >
+      Search Movie By Category
+    </a></li>
+    
+  </ul>
+  <router-outlet></router-outlet>
